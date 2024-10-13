@@ -1,0 +1,24 @@
+table.chessboard {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+td {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2rem;
+}
+
+.light-tile {
+  background-color: #f0d9b5; /* Light tile */
+}
+
+.dark-tile {
+  background-color: #b58863; /* Dark tile */
+}
+
+.selected-tile {
+  border: 2px solid red;
+}

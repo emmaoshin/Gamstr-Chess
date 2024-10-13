@@ -6,7 +6,12 @@
     "outDir": "./out-tsc/spec",
     "types": [
       "jasmine"
-    ]
+    ],
+    "baseUrl": "./",  // Defines the base path for your project
+    "paths": {
+      "@LoggingService*": ["src/app/Utility/Logging/*"],  // Define the alias for the services folder
+      // "@components/*": ["src/app/components/*"]  // You can also define more aliases for other parts of your app
+    }
   },
   "include": [
     "src/**/*.spec.ts",

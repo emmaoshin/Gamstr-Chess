@@ -1,0 +1,19 @@
+<table class="chessboard">
+  <tr *ngFor="let row of chessboard; let rowIndex = index">
+    <td
+      *ngFor="let cell of row; let colIndex = index"
+      [ngClass]="{
+        'light-tile': (rowIndex + colIndex) % 2 === 0,
+        'dark-tile': (rowIndex + colIndex) % 2 !== 0,
+        'selected-tile': selectedPiece?.x === rowIndex && selectedPiece?.y === colIndex
+      }"
+      (click)="onCellClick(rowIndex, colIndex)"
+    >
+      <!-- Log click to ensure event is working -->
+      <!-- <span>{{ rowIndex }}, {{ colIndex }}</span> -->
+      <!-- If there's a piece, use chess-piece component -->
+      <!-- <chess-piece *ngIf="cell" [piece]="cell"></chess-piece> -->
+       <chess-piece *ngIf="cell" [piece]="cell" (click)="onCellClick(rowIndex, colIndex)"></chess-piece>
+    </td>
+  </tr>
+</table>
